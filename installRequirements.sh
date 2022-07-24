@@ -94,3 +94,6 @@ tar xzf eigen-3.3.7.tar.bz2
 rm *.tar.bz2
 rm *.tar.gz
 rm *.zip
+
+# Links due to changed directory names
+ln -s eigen-3.3.7 eigen-eigen-323c052e1731
