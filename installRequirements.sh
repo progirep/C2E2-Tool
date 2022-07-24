@@ -37,7 +37,9 @@ make
 make install
 cd ..
 
-wget ftp://ftp.cs.unipr.it/pub/ppl/releases/1.2/ppl-1.2.tar.gz
+# Link change & Added GMP and M4
+apt-get install -y libgmp-dev m4 
+wget https://www.bugseng.com/products/ppl/download/ftp/releases/1.2/ppl-1.2.tar.gz
 tar -xhvf ppl-1.2.tar.gz
 cd ppl-1.2
 sudo ./configure
@@ -51,15 +53,17 @@ apt-get install libboost-python-dev
 
 
 #python 
-apt-get install -y python3-pip
 apt-get remove python3-numpy
-python3 -m pip install --upgrade pip
+# Doesn't work: apt-get install -y python3-pip
+# python3 -m pip install --upgrade pip
+wget https://bootstrap.pypa.io/pip/3.5/get-pip.py
+python3 get-pip.py
 pip3 install sympy
 pip3 install numpy
 apt-get install -y python3-tk
 pip3 install scipy
 apt-get install -y python3-ply
-apt-get install -y libtiff4-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk
+apt-get install -y libtiff-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk
 pip3 install Pillow
 apt-get install -y git
 
@@ -82,8 +86,8 @@ sudo npm install -g phantomjs-prebuilt
 
 # Eigen library for backends
 
-wget http://bitbucket.org/eigen/eigen/get/3.3.7.tar.bz2
-tar xjf 3.3.7.tar.bz2
+wget https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.gz
+tar xzf eigen-3.3.7.tar.bz2
 
 #Removes compressed files
 
